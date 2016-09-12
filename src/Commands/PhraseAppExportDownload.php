@@ -12,6 +12,6 @@ class PhraseAppExportDownload extends InterogatorCommand
 
     public function handle()
     {
-        $files = $this->export();
+        $files = $this->getLanguage();
     }
 }

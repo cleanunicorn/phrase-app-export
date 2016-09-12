@@ -14,7 +14,9 @@ class PhraseAppExportProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        $this->publishes([
+            __DIR__.'/../config/phrase-app-export.php' => config_path('phrase-app-export.php'),
+        ], 'config');
     }
 
     /**
