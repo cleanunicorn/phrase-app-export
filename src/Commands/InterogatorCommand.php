@@ -31,14 +31,11 @@ abstract class InterogatorCommand extends Command
     public function getLanguage($projectId, $languageId)
     {
         $client = new Client([
-            // Base URI is used with relative requests
             'base_uri' => 'https://api.phraseapp.com/api/v2/',
-            // You can set any number of default request options.
             'timeout' => 5.0,
-            // Headers
             'headers' => [
                 'User-Agent' => 'Phrase App Export for Laravel (daniel@elasticorange.com)',
-                'Authorization' => 'token afa8ee1197dd7ad088c4601344410c05fe4d683e48fda8816fe2b7c7877ee43a',
+                'Authorization' => 'token '.env('PHRASE_APP_EXPORT_API_KEY'),
             ],
         ]);
 
@@ -46,10 +43,10 @@ abstract class InterogatorCommand extends Command
 
         $response = $client->request(
             'GET',
-            'projects/b6a403bd473fe4ce00e27045db550f38/locales/4c67a1609adcfabe166be9fad2b04ef4/download',
+            'projects/'.$projectId.'/locales/'.$languageId.'/download',
             [
                 'form_params' => [
-                    'file_format' => 'laravel',
+                    'file_format' => config('phrase-app-export.locales.format'),
                 ],
             ]
         );
