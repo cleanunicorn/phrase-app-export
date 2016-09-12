@@ -7,5 +7,7 @@
             "email": "daniel.luca@elasticorange.com"
         }
     ],
-    "require": {}
+    "require": {
+        "guzzlehttp/guzzle": "~6.0"
+    }
 }

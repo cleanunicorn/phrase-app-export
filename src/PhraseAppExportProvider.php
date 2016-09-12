@@ -3,6 +3,7 @@
 namespace Hydrarulz\PhraseAppExport;
 
 use Illuminate\Support\ServiceProvider;
+use Hydrarulz\PhraseAppExport\Commands\PhraseAppExportDownload;
 
 class PhraseAppExportProvider extends ServiceProvider
 {
@@ -23,6 +24,10 @@ class PhraseAppExportProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->app->bind('command.phraseapp:download', PhraseAppExportDownload::class);
+
+        $this->commands([
+            'command.phraseapp:download',
+        ]);
     }
 }
