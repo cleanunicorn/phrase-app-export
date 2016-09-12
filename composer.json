@@ -1,0 +1,11 @@
+{
+    "name": "hydrarulz/phrase-app-export",
+    "description": "Command line to export the Phrase App locales",
+    "authors": [
+        {
+            "name": "Daniel Luca",
+            "email": "daniel.luca@elasticorange.com"
+        }
+    ],
+    "require": {}
+}
