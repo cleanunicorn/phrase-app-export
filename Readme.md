@@ -66,6 +66,8 @@ After all was set you can just run
 php artisan phraseapp:download
 ```
 
+Once you have everything setup you can use the `trans()` function provided by Blade to display the proper translation for the key.
+
 If you get an error like
 ```
 Client error: `GET https://api.phraseapp.com/api/v2/projects//locales//download` resulted in a `404 Not Found` response
